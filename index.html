@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Selamat Ulang Tahun Mika</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1470&q=80')
+        no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .page {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 500px;
+    }
+    .active {
+      display: flex;
+    }
+    button {
+      margin-top: 25px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      background-color: #ff5f9e;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    textarea {
+      width: 80%;
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Musik akan diputar saat tombol diklik -->
+<audio id="bg-music" loop>
+  <source src="https://cdn.pixabay.com/audio/2022/03/03/audio_c4fdd928ef.mp3" type="audio/mpeg">
+  Browser kamu tidak mendukung audio.
+</audio>
+
+<!-- HALAMAN 1 -->
+<div class="page active" id="page1">
+  <h1>👋 Hallo Mika Christian</h1>
+  <p>Apakah kamu siap membuka halaman ini? 😌</p>
+  <button onclick="startHere()">Yuk buka 💖</button>
+</div>
+
+<!-- HALAMAN 2 -->
+<div class="page" id="page2">
+  <h1>📅 Besok tanggal 19 loh 🤗🤗🤗</h1>
+  <button onclick="nextPage()">Lanjut ➡️</button>
+</div>
+
+<!-- HALAMAN 3 -->
+<div class="page" id="page3">
+  <h1>🎉 Selamat hari lahir yaaa sayang 🥰❤️🤗😍💖💕💞💗❤️‍🔥💚❤️💙💙💙</h1>
+  <button onclick="nextPage()">Lanjut ➡️</button>
+</div>
+
+<!-- HALAMAN 4 -->
+<div class="page" id="page4">
+  <h2>🙏 Doaku</h2>
+  <p>Mudah-mudahan kita selalu bersama selamanya, dunia akhirat 🤲</p>
+  <p>Setiap langkahmu dalam lindungan-Nya 🕌</p>
+  <p>Diberi umur yang berkah, hati yang tenang, dan cinta yang tulus di sekitarmu 💞</p>
+  <p>Apapun yang kamu impikan, semoga perlahan jadi nyata 🌠</p>
+  <p>Dan di saat kamu lelah, semoga ada aku dan pelukanku 🤗❤️</p>
+  <button onclick="nextPage()">Lanjut ➡️</button>
+</div>
+
+<!-- HALAMAN 5 -->
+<div class="page" id="page5">
+  <h2>🤔 Mau apa nih sayang?</h2>
+  <p>Sebutin 3 yang paling kamu mau ya sayang 💌</p>
+  <textarea rows="4" placeholder="Tulis keinginanmu di sini..."></textarea>
+  <button onclick="nextPage()">Sudah ditulis ✅</button>
+</div>
+
+<!-- HALAMAN 6 -->
+<div class="page" id="page6">
+  <h1>✨ Aku akan wujudin itu 🥹</h1>
+  <button onclick="nextPage()">Lanjut ➡️</button>
+</div>
+
+<!-- HALAMAN 7 -->
+<div class="page" id="page7">
+  <h1>💞 Sampai jumpa nanti malam 💋</h1>
+  <h2>Love you 😘</h2>
+</div>
+
+<script>
+  const audio = document.getElementById('bg-music');
+  let currentPage = 1;
+
+  function startHere() {
+    // Aktifkan musik saat tombol pertama diklik
+    audio.play().catch(() => {
+      alert("Klik sekali lagi supaya musiknya bisa diputar 🎵");
+    });
+    nextPage();
+  }
+
+  function nextPage() {
+    document.getElementById("page" + currentPage).classList.remove("active");
+    currentPage++;
+    document.getElementById("page" + currentPage).classList.add("active");
+  }
+</script>
+
+</body>
+</html>
